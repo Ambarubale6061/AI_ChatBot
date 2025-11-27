@@ -33,7 +33,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
           {/* HEADER */}
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-xl font-semibold tracking-wide">
-              {process.env.NEXT_PUBLIC_APP_TITLE || 'Real-Time AI Chat'}
+              {process.env.NEXT_PUBLIC_APP_TITLE || 'AI_ChatBot'}
             </h1>
 
             {/* THEME BUTTON */}
