@@ -1,6 +1,7 @@
 import WebSocket, { WebSocketServer } from "ws";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import { randomUUID } from "crypto"; 
 
 dotenv.config();
 
@@ -30,11 +31,20 @@ wss.on("connection", (ws) => {
 
     if (msg.type !== "user_message") return;
 
-    const id = msg.id;
+    const userId = msg.id;            // user message ID
     const userMessage = msg.content;
 
-    // ACK (frontend uses this to avoid duplicate user messages)
-    ws.send(JSON.stringify({ type: "user_ack", id }));
+    // ACK
+    ws.send(JSON.stringify({ type: "user_ack", id: userId }));
+
+    // >>> New unique ID for assistant <<<
+    const assistantId = randomUUID();
+
+    // Notify frontend: assistant started typing
+    ws.send(JSON.stringify({
+      type: "assistant_start",
+      id: assistantId
+    }));
 
     // ------------ CALL OPENAI ------------
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -56,14 +66,14 @@ wss.on("connection", (ws) => {
     if (!response.ok || !response.body) {
       ws.send(JSON.stringify({
         type: "assistant_chunk",
-        id,
+        id: assistantId,
         chunk: "[OpenAI Error: Could not start streaming]"
       }));
-      ws.send(JSON.stringify({ type: "assistant_done", id }));
+      ws.send(JSON.stringify({ type: "assistant_done", id: assistantId }));
       return;
     }
 
-    // ---------------- STREAM PARSING (BEST) ----------------
+    // ---------------- STREAM PARSING ----------------
     const decoder = new TextDecoder();
     let buffer = "";
 
@@ -84,7 +94,7 @@ wss.on("connection", (ws) => {
           const data = trimmed.replace("data:", "").trim();
 
           if (data === "[DONE]") {
-            ws.send(JSON.stringify({ type: "assistant_done", id }));
+            ws.send(JSON.stringify({ type: "assistant_done", id: assistantId }));
             return;
           }
 
@@ -94,19 +104,16 @@ wss.on("connection", (ws) => {
             if (delta.length > 0) {
               ws.send(JSON.stringify({
                 type: "assistant_chunk",
-                id,
+                id: assistantId,
                 chunk: delta
               }));
             }
-          } catch (err) {
-            // ignore bad json
-          }
+          } catch {}
         }
       }
     }
 
-    // flush leftover
-    ws.send(JSON.stringify({ type: "assistant_done", id }));
+    ws.send(JSON.stringify({ type: "assistant_done", id: assistantId }));
   });
 
   ws.on("close", () => {

@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 export function uid() {
-  return 'id-' + Math.random().toString(36).slice(2,9)
+  return uuidv4()
 }

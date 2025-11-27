@@ -6,4 +6,5 @@ export type ChatMessage = {
   content: string
   timestamp: number
   streaming?: boolean
+  isAi?: boolean   // 👈 ADD THIS
 }
