@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+.mac-window {
+  border-radius: 14px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
