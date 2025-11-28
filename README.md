@@ -1,187 +1,223 @@
-# AI_ChatBot
+# 🚀 **Real-Time AI Chatbot — WebSocket Streaming (Next.js 14)**
 
-📘 Real-Time AI Chatbot (WebSocket Streaming)
+*A modern, ChatGPT-style conversational AI with real-time streaming.*
 
-A modern, responsive, and ChatGPT-style AI chat application built using Next.js 14, React, TypeScript, TailwindCSS, and WebSockets.
-It supports real-time streaming responses, ChatGPT-like UI, dark/light theme, and modular clean code structure.
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=nextdotjs" />
+  <img src="https://img.shields.io/badge/TailwindCSS-3.4-blue?style=for-the-badge&logo=tailwindcss" />
+  <img src="https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript" />
+  <img src="https://img.shields.io/badge/WebSockets-Streaming-green?style=for-the-badge&logo=socketdotio" />
+</p>
 
-🖼 UI Preview
+---
 
-(As per your provided screenshot)
+# 🎯 **Overview**
 
-Left Sidebar — New Chat, Search, Library, Your Chats
+This project is a **ChatGPT-inspired Real-Time AI Chatbot** built with
+**Next.js 14 + React + WebSockets**, designed to stream responses smoothly like GPT models.
 
-Glassy, padded main chat area
+It includes:
 
-Streaming assistant text
+✔ ChatGPT-style **left sidebar**
+✔ Real-time streaming **assistant typing**
+✔ Dark/Light mode
+✔ Clean modular architecture
+✔ Aesthetic, modern UI
 
-Message input bar with “Send” + “Mic”
+This project is perfect for **frontend assignment**, **portfolio**, and **production-grade use**.
 
-Modern shadows, spacing, rounded UI (ChatGPT styling)
+---
 
-🚀 Features
-✔ Core Features
+# 🖥 **UI Preview**
 
-Real-time streaming responses using WebSockets
+> (*Add your screenshot here*)
 
-ChatGPT-style sidebar
+```md
+![App Screenshot](./screenshot.png)
+```
 
-Smooth auto-scroll message list
+---
 
-Input auto-disable during streaming
+# ✨ **Features**
 
-Dark/Light theme
+## 🔥 Core Functionality
 
-Clear chat functionality
+* ⚡ Real-time WebSocket streaming
+* 🎤 Chat input bar with **Mic + Plus + Send**
+* 🔄 Auto-scrolling message view
+* 🚫 Input auto-disabled during streaming
+* 🧹 Clear chat button
+* 💬 Chat bubbles (User & Assistant)
+* 🎚 Smooth animations
 
-Fully responsive UI
+## 🧭 Sidebar (ChatGPT-Inspired)
 
-Modular, clean component structure
+* ➕ New Chat
+* 🔍 Search Chat
+* 📚 Library
+* 🕑 Your Chats
+* Beautiful compact layout with perfect spacing & shadows
 
-Type-safe with TypeScript
+## 🎨 UI / UX
 
-Custom hook: useWebSocket()
+* Modern rounded containers
+* Shadowed glass-like card
+* Perfect color palette
+* Fully responsive
+* Dark/Light toggling
 
-Lucide icons for modern UI
+---
 
-✔ UI/UX Features
+# 🏗 **Tech Stack**
 
-Chat bubbles (User + Assistant)
+| Category         | Technology                      |
+| ---------------- | ------------------------------- |
+| Framework        | **Next.js 14 App Router**       |
+| Language         | **TypeScript**                  |
+| Styling          | **Tailwind CSS**                |
+| WebSocket Client | Custom Hook (`useWebSocket.ts`) |
+| Icons            | Lucide React                    |
+| State            | React Hooks                     |
+| Animations       | CSS + React                     |
 
-Elevation shadows + rounded corners
+---
 
-Sticky bottom input
+# 📂 **Folder Structure**
 
-Animated typing experience
+```
+frontend/
+ ├── app/
+ │   ├── layout.tsx
+ │   ├── page.tsx
+ │   ├── ThemeProvider.tsx
+ ├── components/
+ │   ├── Sidebar.tsx
+ │   ├── ChatPage.tsx
+ │   ├── ChatInput.tsx
+ │   ├── MessageList.tsx
+ │   ├── MessageBubble.tsx
+ ├── hooks/
+ │   └── useWebSocket.ts
+ ├── public/
+ ├── styles/
+ │   └── globals.css
+ └── README.md
+```
 
-Keyboard shortcuts (Enter to send)
+---
 
-📦 Tech Stack
-Layer Technology
-Framework Next.js 14 App Router
-Language TypeScript
-Styling TailwindCSS
-Icons Lucide-react
-Real-time WebSockets (custom hook stream)
-UI State React hooks
-Layout Component-based, scalable file structure
-🛠 Installation & Setup
-1️⃣ Clone the Repository
+# ⚙️ **Setup Instructions**
+
+## 1️⃣ Clone the Project
+
+```bash
 git clone <repo-url>
 cd frontend
+```
 
-2️⃣ Install Dependencies
+## 2️⃣ Install Dependencies
+
+```bash
 npm install
+```
 
-3️⃣ Create .env.local
+## 3️⃣ Environment Variables
 
-Create a file in the project root:
+Create **.env.local**:
 
+```
 NEXT_PUBLIC_WS_URL=ws://localhost:3001
 NEXT_PUBLIC_APP_TITLE=Real-Time AI Chat
+```
 
-Modify the WebSocket URL to your backend server.
+---
 
-▶️ Running the Project
-Development Mode
+# ▶️ **Run the App**
+
+## Development
+
+```bash
 npm run dev
+```
 
-# Runs at http://localhost:3000
+App runs at:
 
-Production Build
+```
+http://localhost:3000
+```
+
+## Production Build
+
+```bash
 npm run build
 npm start
+```
 
-📂 Project Structure
-frontend/
-├─ app/
-│ ├─ layout.tsx
-│ ├─ page.tsx
-│ ├─ ThemeProvider.tsx
-├─ components/
-│ ├─ Sidebar.tsx
-│ ├─ ChatPage.tsx
-│ ├─ MessageList.tsx
-│ ├─ MessageBubble.tsx
-│ ├─ ChatInput.tsx
-├─ hooks/
-│ └─ useWebSocket.ts
-├─ public/
-├─ styles/
-│ └─ globals.css
-└─ README.md
+---
 
-Component Breakdown
-🔹 Sidebar.tsx
+# 🧪 **Checklist (Assignment Ready)**
 
-ChatGPT-style left sidebar: New Chat, Search, History, Library.
+| Requirement                  | Status |
+| ---------------------------- | ------ |
+| Real-time streaming          | ✔      |
+| ChatGPT-like UI              | ✔      |
+| Sidebar navigation           | ✔      |
+| Clean code                   | ✔      |
+| Component architecture       | ✔      |
+| WebSocket integration        | ✔      |
+| Light/Dark mode              | ✔      |
+| README.md full documentation | ✔      |
+| Clear button                 | ✔      |
+| Mic button                   | ✔      |
 
-🔹 ChatPage.tsx
+---
 
-Main chat screen controller – connects messages + input.
+# 📈 **Time Spent**
 
-🔹 MessageList.tsx
+| Task                      | Duration     |
+| ------------------------- | ------------ |
+| UI/UX Design              | 1 hr         |
+| Sidebar + Chat Layout     | 50 mins      |
+| WebSocket streaming logic | 1 hr 10 mins |
+| Components & architecture | 1 hr         |
+| Cleanup & debugging       | 30 mins      |
+| Writing README + docs     | 30 mins      |
+| **Total**                 | **~5 hrs**   |
 
-Renders streaming messages with smooth auto-scroll.
+---
 
-🔹 ChatInput.tsx
+# 🧭 **System Architecture**
 
-User input bar with +, Send, and Mic icons.
+```
+User Input → WebSocket Client → Backend WS Server → AI Model 
+           ↑ ← Streaming Tokens ← ┘
+```
 
-🔹 useWebSocket.ts
+Streaming tokens update the UI in real-time.
 
-Handles WS connection, streaming, message state, callbacks.
+---
 
-🔧 Environment Variables
-Variable Description
-NEXT_PUBLIC_WS_URL WebSocket endpoint for streaming
-NEXT_PUBLIC_APP_TITLE App name (used in layout metadata)
+# 🚀 **Deploy on Vercel**
 
-Example:
-
-NEXT_PUBLIC_WS_URL=ws://localhost:3001
-NEXT_PUBLIC_APP_TITLE=Real-Time AI Chat
-
-✨ Checklist (Assignment Requirements)
-Feature Status
-Next.js 14 project setup ✔ Done
-Real-time WebSocket streaming ✔ Done
-Chat UI (Send + Stream) ✔ Done
-Sidebar ChatGPT style ✔ Done
-Clean modular components ✔ Done
-Message auto-scroll ✔ Done
-TailwindCSS styling ✔ Done
-Dark/Light theme support ✔ Done
-Clear chat button ✔ Done
-Assignment README.md ✔ Done
-🕒 Time Spent
-Task Duration
-Next.js project setup 20 mins
-Sidebar UI 45 mins
-Chat UI design 50 mins
-WebSocket streaming integration 1 hr
-Message system + auto-scroll 35 mins
-Input bar + mic button 25 mins
-Cleanup + bug fixes 20 mins
-README documentation 25 mins
-Total Time 4 hours 40 mins
-📤 Deployment
-
-You can deploy on:
-
-▲ Vercel (Recommended)
+```
 vercel
+```
 
-🐳 Docker
+---
 
-(Dockerfile not included but can be generated)
+# 🛠 **Future Improvements**
 
-📚 Future Enhancements
+* Chat history database
+* Model selection
+* Voice-to-text
+* PDF / Image input
+* Multi-chat workspace
 
-Chat history persistence (local DB / server)
+---
 
-User authentication
+# 👤 **Author**
 
-Multiple models support
+**Ambar Ubale**
+Frontend Developer — React • Next.js • TypeScript
 
-File upload (PDF/Image input)
+---
