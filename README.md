@@ -28,16 +28,6 @@ This project is perfect for **frontend assignment**, **portfolio**, and **produc
 
 ---
 
-# 🖥 **UI Preview**
-
-> (*Add your screenshot here*)
-
-```md
-![App Screenshot](./screenshot.png)
-```
-
----
-
 # ✨ **Features**
 
 ## 🔥 Core Functionality
